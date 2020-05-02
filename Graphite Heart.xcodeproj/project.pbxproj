@@ -1,0 +1,634 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		443617D0245C6C7A00343E02 /* Graphite Heart WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		443617D6245C6C7A00343E02 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443617D4245C6C7A00343E02 /* Interface.storyboard */; };
+		443617D8245C6C7B00343E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443617D7245C6C7B00343E02 /* Assets.xcassets */; };
+		443617DF245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 443617DE245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		443617E4245C6C7B00343E02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443617E3245C6C7B00343E02 /* ContentView.swift */; };
+		443617E6245C6C7B00343E02 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443617E5245C6C7B00343E02 /* HostingController.swift */; };
+		443617E8245C6C7B00343E02 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443617E7245C6C7B00343E02 /* ExtensionDelegate.swift */; };
+		443617EA245C6C7B00343E02 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443617E9245C6C7B00343E02 /* NotificationController.swift */; };
+		443617EC245C6C7B00343E02 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443617EB245C6C7B00343E02 /* NotificationView.swift */; };
+		443617EE245C6C7B00343E02 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443617ED245C6C7B00343E02 /* ComplicationController.swift */; };
+		443617F0245C6C7C00343E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443617EF245C6C7C00343E02 /* Assets.xcassets */; };
+		443617F3245C6C7C00343E02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443617F2245C6C7C00343E02 /* Preview Assets.xcassets */; };
+		449AEFBD245CC5D4004D4CDE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AEFBC245CC5D4004D4CDE /* MainView.swift */; };
+		44ED5438245C7FE9008A9D17 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED5433245C7FE9008A9D17 /* UDPClient.swift */; };
+		44ED5439245C7FE9008A9D17 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED5434245C7FE9008A9D17 /* Socket.swift */; };
+		44ED543A245C7FE9008A9D17 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 44ED5435245C7FE9008A9D17 /* yudpsocket.c */; };
+		44ED543B245C7FE9008A9D17 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED5436245C7FE9008A9D17 /* Result.swift */; };
+		44ED543D245C80A6008A9D17 /* LocalNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED543C245C80A6008A9D17 /* LocalNotificationHelper.swift */; };
+		44ED543F245C80DF008A9D17 /* WorkoutTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED543E245C80DF008A9D17 /* WorkoutTracking.swift */; };
+		44ED5445245C866F008A9D17 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ED5444245C866F008A9D17 /* HealthKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		443617D1245C6C7A00343E02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 443617C5245C6C7A00343E02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 443617CE245C6C7A00343E02;
+			remoteInfo = "Graphite Heart WatchKit App";
+		};
+		443617E0245C6C7B00343E02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 443617C5245C6C7A00343E02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 443617DD245C6C7B00343E02;
+			remoteInfo = "Graphite Heart WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		443617FB245C6C7C00343E02 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				443617DF245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		443617FF245C6C7C00343E02 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				443617D0245C6C7A00343E02 /* Graphite Heart WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		443617CB245C6C7A00343E02 /* Graphite Heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphite Heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphite Heart WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443617D5245C6C7A00343E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		443617D7245C6C7B00343E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		443617D9245C6C7B00343E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443617DE245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Graphite Heart WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443617E3245C6C7B00343E02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		443617E5245C6C7B00343E02 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		443617E7245C6C7B00343E02 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		443617E9245C6C7B00343E02 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		443617EB245C6C7B00343E02 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		443617ED245C6C7B00343E02 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		443617EF245C6C7C00343E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		443617F2245C6C7C00343E02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		443617F4245C6C7C00343E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443617F5245C6C7C00343E02 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		449AEFBC245CC5D4004D4CDE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		44ED5432245C7FE8008A9D17 /* Graphite Heart WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graphite Heart WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		44ED5433245C7FE9008A9D17 /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
+		44ED5434245C7FE9008A9D17 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		44ED5435245C7FE9008A9D17 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		44ED5436245C7FE9008A9D17 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		44ED5437245C7FE9008A9D17 /* SwiftSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftSocket.h; sourceTree = "<group>"; };
+		44ED543C245C80A6008A9D17 /* LocalNotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationHelper.swift; sourceTree = "<group>"; };
+		44ED543E245C80DF008A9D17 /* WorkoutTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTracking.swift; sourceTree = "<group>"; };
+		44ED5442245C866F008A9D17 /* Graphite Heart WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Graphite Heart WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		44ED5444245C866F008A9D17 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		443617DB245C6C7B00343E02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44ED5445245C866F008A9D17 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		443617C4245C6C7A00343E02 = {
+			isa = PBXGroup;
+			children = (
+				443617D3245C6C7A00343E02 /* Graphite Heart WatchKit App */,
+				443617E2245C6C7B00343E02 /* Graphite Heart WatchKit Extension */,
+				443617CC245C6C7A00343E02 /* Products */,
+				44ED5443245C866F008A9D17 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		443617CC245C6C7A00343E02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				443617CB245C6C7A00343E02 /* Graphite Heart.app */,
+				443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */,
+				443617DE245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		443617D3245C6C7A00343E02 /* Graphite Heart WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				44ED5432245C7FE8008A9D17 /* Graphite Heart WatchKit Extension-Bridging-Header.h */,
+				443617D4245C6C7A00343E02 /* Interface.storyboard */,
+				443617D7245C6C7B00343E02 /* Assets.xcassets */,
+				443617D9245C6C7B00343E02 /* Info.plist */,
+			);
+			path = "Graphite Heart WatchKit App";
+			sourceTree = "<group>";
+		};
+		443617E2245C6C7B00343E02 /* Graphite Heart WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				44ED5442245C866F008A9D17 /* Graphite Heart WatchKit Extension.entitlements */,
+				44ED5436245C7FE9008A9D17 /* Result.swift */,
+				44ED5434245C7FE9008A9D17 /* Socket.swift */,
+				44ED5437245C7FE9008A9D17 /* SwiftSocket.h */,
+				44ED5433245C7FE9008A9D17 /* UDPClient.swift */,
+				44ED5435245C7FE9008A9D17 /* yudpsocket.c */,
+				443617E3245C6C7B00343E02 /* ContentView.swift */,
+				449AEFBC245CC5D4004D4CDE /* MainView.swift */,
+				443617E5245C6C7B00343E02 /* HostingController.swift */,
+				443617E7245C6C7B00343E02 /* ExtensionDelegate.swift */,
+				44ED543C245C80A6008A9D17 /* LocalNotificationHelper.swift */,
+				443617E9245C6C7B00343E02 /* NotificationController.swift */,
+				443617EB245C6C7B00343E02 /* NotificationView.swift */,
+				443617ED245C6C7B00343E02 /* ComplicationController.swift */,
+				44ED543E245C80DF008A9D17 /* WorkoutTracking.swift */,
+				443617EF245C6C7C00343E02 /* Assets.xcassets */,
+				443617F4245C6C7C00343E02 /* Info.plist */,
+				443617F5245C6C7C00343E02 /* PushNotificationPayload.apns */,
+				443617F1245C6C7C00343E02 /* Preview Content */,
+			);
+			path = "Graphite Heart WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		443617F1245C6C7C00343E02 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				443617F2245C6C7C00343E02 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		44ED5443245C866F008A9D17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44ED5444245C866F008A9D17 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		443617CA245C6C7A00343E02 /* Graphite Heart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44361800245C6C7C00343E02 /* Build configuration list for PBXNativeTarget "Graphite Heart" */;
+			buildPhases = (
+				443617C9245C6C7A00343E02 /* Resources */,
+				443617FF245C6C7C00343E02 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				443617D2245C6C7A00343E02 /* PBXTargetDependency */,
+			);
+			name = "Graphite Heart";
+			productName = "Graphite Heart";
+			productReference = 443617CB245C6C7A00343E02 /* Graphite Heart.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		443617CE245C6C7A00343E02 /* Graphite Heart WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 443617FC245C6C7C00343E02 /* Build configuration list for PBXNativeTarget "Graphite Heart WatchKit App" */;
+			buildPhases = (
+				443617CD245C6C7A00343E02 /* Resources */,
+				443617FB245C6C7C00343E02 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				443617E1245C6C7B00343E02 /* PBXTargetDependency */,
+			);
+			name = "Graphite Heart WatchKit App";
+			productName = "Graphite Heart WatchKit App";
+			productReference = 443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		443617DD245C6C7B00343E02 /* Graphite Heart WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 443617F8245C6C7C00343E02 /* Build configuration list for PBXNativeTarget "Graphite Heart WatchKit Extension" */;
+			buildPhases = (
+				443617DA245C6C7B00343E02 /* Sources */,
+				443617DB245C6C7B00343E02 /* Frameworks */,
+				443617DC245C6C7B00343E02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Graphite Heart WatchKit Extension";
+			productName = "Graphite Heart WatchKit Extension";
+			productReference = 443617DE245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		443617C5245C6C7A00343E02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Benjamin Reed";
+				TargetAttributes = {
+					443617CA245C6C7A00343E02 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					443617CE245C6C7A00343E02 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					443617DD245C6C7B00343E02 = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+					};
+				};
+			};
+			buildConfigurationList = 443617C8245C6C7A00343E02 /* Build configuration list for PBXProject "Graphite Heart" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 443617C4245C6C7A00343E02;
+			productRefGroup = 443617CC245C6C7A00343E02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				443617CA245C6C7A00343E02 /* Graphite Heart */,
+				443617CE245C6C7A00343E02 /* Graphite Heart WatchKit App */,
+				443617DD245C6C7B00343E02 /* Graphite Heart WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		443617C9245C6C7A00343E02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		443617CD245C6C7A00343E02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				443617D8245C6C7B00343E02 /* Assets.xcassets in Resources */,
+				443617D6245C6C7A00343E02 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		443617DC245C6C7B00343E02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				443617F3245C6C7C00343E02 /* Preview Assets.xcassets in Resources */,
+				443617F0245C6C7C00343E02 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		443617DA245C6C7B00343E02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44ED5439245C7FE9008A9D17 /* Socket.swift in Sources */,
+				449AEFBD245CC5D4004D4CDE /* MainView.swift in Sources */,
+				443617E6245C6C7B00343E02 /* HostingController.swift in Sources */,
+				443617E4245C6C7B00343E02 /* ContentView.swift in Sources */,
+				443617EA245C6C7B00343E02 /* NotificationController.swift in Sources */,
+				443617E8245C6C7B00343E02 /* ExtensionDelegate.swift in Sources */,
+				44ED543A245C7FE9008A9D17 /* yudpsocket.c in Sources */,
+				44ED543B245C7FE9008A9D17 /* Result.swift in Sources */,
+				44ED543D245C80A6008A9D17 /* LocalNotificationHelper.swift in Sources */,
+				44ED5438245C7FE9008A9D17 /* UDPClient.swift in Sources */,
+				443617EC245C6C7B00343E02 /* NotificationView.swift in Sources */,
+				44ED543F245C80DF008A9D17 /* WorkoutTracking.swift in Sources */,
+				443617EE245C6C7B00343E02 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		443617D2245C6C7A00343E02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 443617CE245C6C7A00343E02 /* Graphite Heart WatchKit App */;
+			targetProxy = 443617D1245C6C7A00343E02 /* PBXContainerItemProxy */;
+		};
+		443617E1245C6C7B00343E02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 443617DD245C6C7B00343E02 /* Graphite Heart WatchKit Extension */;
+			targetProxy = 443617E0245C6C7B00343E02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		443617D4245C6C7A00343E02 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				443617D5245C6C7A00343E02 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		443617F6245C6C7C00343E02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		443617F7245C6C7C00343E02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		443617F9245C6C7C00343E02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Graphite Heart WatchKit Extension/Graphite Heart WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Graphite Heart WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Graphite Heart WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Graphite Heart WatchKit App/Graphite Heart WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		443617FA245C6C7C00343E02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Graphite Heart WatchKit Extension/Graphite Heart WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Graphite Heart WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Graphite Heart WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Graphite Heart WatchKit App/Graphite Heart WatchKit Extension-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		443617FD245C6C7C00343E02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				IBSC_MODULE = Graphite_Heart_WatchKit_Extension;
+				INFOPLIST_FILE = "Graphite Heart WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		443617FE245C6C7C00343E02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				IBSC_MODULE = Graphite_Heart_WatchKit_Extension;
+				INFOPLIST_FILE = "Graphite Heart WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		44361801245C6C7C00343E02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		44361802245C6C7C00343E02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		443617C8245C6C7A00343E02 /* Build configuration list for PBXProject "Graphite Heart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				443617F6245C6C7C00343E02 /* Debug */,
+				443617F7245C6C7C00343E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		443617F8245C6C7C00343E02 /* Build configuration list for PBXNativeTarget "Graphite Heart WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				443617F9245C6C7C00343E02 /* Debug */,
+				443617FA245C6C7C00343E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		443617FC245C6C7C00343E02 /* Build configuration list for PBXNativeTarget "Graphite Heart WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				443617FD245C6C7C00343E02 /* Debug */,
+				443617FE245C6C7C00343E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44361800245C6C7C00343E02 /* Build configuration list for PBXNativeTarget "Graphite Heart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44361801245C6C7C00343E02 /* Debug */,
+				44361802245C6C7C00343E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 443617C5245C6C7A00343E02 /* Project object */;
+}
