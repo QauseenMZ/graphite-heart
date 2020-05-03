@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		443617D0245C6C7A00343E02 /* Graphite Heart WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		443617D0245C6C7A00343E02 /* Graphite Heart.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 443617CF245C6C7A00343E02 /* Graphite Heart.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		443617D6245C6C7A00343E02 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443617D4245C6C7A00343E02 /* Interface.storyboard */; };
 		443617D8245C6C7B00343E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443617D7245C6C7B00343E02 /* Assets.xcassets */; };
 		443617DF245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 443617DE245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -65,7 +65,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				443617D0245C6C7A00343E02 /* Graphite Heart WatchKit App.app in Embed Watch Content */,
+				443617D0245C6C7A00343E02 /* Graphite Heart.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		443617CB245C6C7A00343E02 /* Graphite Heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphite Heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphite Heart WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443617CB245C6C7A00343E02 /* Graphite Heart Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphite Heart Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443617CF245C6C7A00343E02 /* Graphite Heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graphite Heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		443617D5245C6C7A00343E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		443617D7245C6C7B00343E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		443617D9245C6C7B00343E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +88,7 @@
 		443617F2245C6C7C00343E02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		443617F4245C6C7C00343E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		443617F5245C6C7C00343E02 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4490F5D0245F2C6100BB7AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449AEFBC245CC5D4004D4CDE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		44B62ED3245E4C7D0036A5C1 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		44ED5432245C7FE8008A9D17 /* Graphite Heart WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graphite Heart WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		443617C4245C6C7A00343E02 = {
 			isa = PBXGroup;
 			children = (
+				4490F5D0245F2C6100BB7AEA /* Info.plist */,
 				443617D3245C6C7A00343E02 /* Graphite Heart WatchKit App */,
 				443617E2245C6C7B00343E02 /* Graphite Heart WatchKit Extension */,
 				443617CC245C6C7A00343E02 /* Products */,
@@ -128,8 +130,8 @@
 		443617CC245C6C7A00343E02 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				443617CB245C6C7A00343E02 /* Graphite Heart.app */,
-				443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */,
+				443617CB245C6C7A00343E02 /* Graphite Heart Project.app */,
+				443617CF245C6C7A00343E02 /* Graphite Heart.app */,
 				443617DE245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -205,7 +207,7 @@
 			);
 			name = "Graphite Heart";
 			productName = "Graphite Heart";
-			productReference = 443617CB245C6C7A00343E02 /* Graphite Heart.app */;
+			productReference = 443617CB245C6C7A00343E02 /* Graphite Heart Project.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
 		443617CE245C6C7A00343E02 /* Graphite Heart WatchKit App */ = {
@@ -222,7 +224,7 @@
 			);
 			name = "Graphite Heart WatchKit App";
 			productName = "Graphite Heart WatchKit App";
-			productReference = 443617CF245C6C7A00343E02 /* Graphite Heart WatchKit App.app */;
+			productReference = 443617CF245C6C7A00343E02 /* Graphite Heart.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		443617DD245C6C7B00343E02 /* Graphite Heart WatchKit Extension */ = {
@@ -483,6 +485,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Graphite Heart WatchKit Extension/Graphite Heart WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Graphite Heart WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = N7VNY4MNDW;
@@ -493,8 +496,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "Graphite Heart WatchKit Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Graphite Heart WatchKit App/Graphite Heart WatchKit Extension-Bridging-Header.h";
@@ -510,6 +514,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Graphite Heart WatchKit Extension/Graphite Heart WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Graphite Heart WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = N7VNY4MNDW;
@@ -520,8 +525,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "Graphite Heart WatchKit Extension";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Graphite Heart WatchKit App/Graphite Heart WatchKit Extension-Bridging-Header.h";
@@ -540,8 +546,8 @@
 				DEVELOPMENT_TEAM = N7VNY4MNDW;
 				IBSC_MODULE = Graphite_Heart_WatchKit_Extension;
 				INFOPLIST_FILE = "Graphite Heart WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp";
-				PRODUCT_NAME = "Graphite Heart WatchKit App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.watchkitapp";
+				PRODUCT_NAME = "Graphite Heart";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -559,8 +565,8 @@
 				DEVELOPMENT_TEAM = N7VNY4MNDW;
 				IBSC_MODULE = Graphite_Heart_WatchKit_Extension;
 				INFOPLIST_FILE = "Graphite Heart WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart.watchkitapp";
-				PRODUCT_NAME = "Graphite Heart WatchKit App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.watchkitapp";
+				PRODUCT_NAME = "Graphite Heart";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -575,9 +581,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				INFOPLIST_FILE = Info.plist;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart";
+				PRODUCT_NAME = "Graphite Heart Project";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -588,9 +595,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N7VNY4MNDW;
+				INFOPLIST_FILE = Info.plist;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart.Graphite-Heart";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.opennms.graphite-heart";
+				PRODUCT_NAME = "Graphite Heart Project";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
