@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Shallows",
+        "repositoryURL": "https://github.com/dreymonde/Shallows",
+        "state": {
+          "branch": null,
+          "revision": "6d38c0b88a4b17c4624eb4a2a6fd436dbe7e2b3b",
+          "version": "0.11.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

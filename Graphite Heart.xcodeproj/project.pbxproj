@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,8 @@
 		443617F0245C6C7C00343E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443617EF245C6C7C00343E02 /* Assets.xcassets */; };
 		443617F3245C6C7C00343E02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 443617F2245C6C7C00343E02 /* Preview Assets.xcassets */; };
 		449AEFBD245CC5D4004D4CDE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449AEFBC245CC5D4004D4CDE /* MainView.swift */; };
+		44B62ED4245E4C7D0036A5C1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B62ED3245E4C7D0036A5C1 /* Storage.swift */; };
+		44B62EDA245E505F0036A5C1 /* Shallows in Frameworks */ = {isa = PBXBuildFile; productRef = 44B62ED9245E505F0036A5C1 /* Shallows */; };
 		44ED5438245C7FE9008A9D17 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED5433245C7FE9008A9D17 /* UDPClient.swift */; };
 		44ED5439245C7FE9008A9D17 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED5434245C7FE9008A9D17 /* Socket.swift */; };
 		44ED543A245C7FE9008A9D17 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 44ED5435245C7FE9008A9D17 /* yudpsocket.c */; };
@@ -89,6 +91,7 @@
 		443617F4245C6C7C00343E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		443617F5245C6C7C00343E02 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		449AEFBC245CC5D4004D4CDE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		44B62ED3245E4C7D0036A5C1 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		44ED5432245C7FE8008A9D17 /* Graphite Heart WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Graphite Heart WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		44ED5433245C7FE9008A9D17 /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
 		44ED5434245C7FE9008A9D17 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44ED5445245C866F008A9D17 /* HealthKit.framework in Frameworks */,
+				44B62EDA245E505F0036A5C1 /* Shallows in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +165,7 @@
 				443617E9245C6C7B00343E02 /* NotificationController.swift */,
 				443617EB245C6C7B00343E02 /* NotificationView.swift */,
 				443617ED245C6C7B00343E02 /* ComplicationController.swift */,
+				44B62ED3245E4C7D0036A5C1 /* Storage.swift */,
 				44ED543E245C80DF008A9D17 /* WorkoutTracking.swift */,
 				443617EF245C6C7C00343E02 /* Assets.xcassets */,
 				443617F4245C6C7C00343E02 /* Info.plist */,
@@ -236,6 +241,9 @@
 			dependencies = (
 			);
 			name = "Graphite Heart WatchKit Extension";
+			packageProductDependencies = (
+				44B62ED9245E505F0036A5C1 /* Shallows */,
+			);
 			productName = "Graphite Heart WatchKit Extension";
 			productReference = 443617DE245C6C7B00343E02 /* Graphite Heart WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -271,6 +279,9 @@
 				Base,
 			);
 			mainGroup = 443617C4245C6C7A00343E02;
+			packageReferences = (
+				44B62ED8245E505F0036A5C1 /* XCRemoteSwiftPackageReference "Shallows" */,
+			);
 			productRefGroup = 443617CC245C6C7A00343E02 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,6 +330,7 @@
 				449AEFBD245CC5D4004D4CDE /* MainView.swift in Sources */,
 				443617E6245C6C7B00343E02 /* HostingController.swift in Sources */,
 				443617E4245C6C7B00343E02 /* ContentView.swift in Sources */,
+				44B62ED4245E4C7D0036A5C1 /* Storage.swift in Sources */,
 				443617EA245C6C7B00343E02 /* NotificationController.swift in Sources */,
 				443617E8245C6C7B00343E02 /* ExtensionDelegate.swift in Sources */,
 				44ED543A245C7FE9008A9D17 /* yudpsocket.c in Sources */,
@@ -629,6 +641,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		44B62ED8245E505F0036A5C1 /* XCRemoteSwiftPackageReference "Shallows" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dreymonde/Shallows";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44B62ED9245E505F0036A5C1 /* Shallows */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44B62ED8245E505F0036A5C1 /* XCRemoteSwiftPackageReference "Shallows" */;
+			productName = Shallows;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 443617C5245C6C7A00343E02 /* Project object */;
 }

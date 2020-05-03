@@ -8,11 +8,17 @@
 
 import SwiftUI
 
-struct MainView: View {
-    var ipAddress = ""
-    @State var heartRate:Float?;
-    @State var started = false;
-    @State var heartPump = true;
+protocol DataDelegate {
+    var ipAddress:String { get set }
+    var heartRate:Float? { get set }
+}
+
+struct MainView: View, DataDelegate {
+    let storage = Storage()
+
+    @State var ipAddress:String = ""
+    @State var heartRate:Float?
+    @State var started = false
 
     var body: some View {
         VStack {
@@ -23,7 +29,8 @@ struct MainView: View {
                 if (self.started) {
                     WorkoutTracking.shared.stopObservingHeartRate()
                 } else {
-                    WorkoutTracking.shared.startObservingHeartRate(view: self)
+                    self.storage.ipAddress(newAddress: self.ipAddress)
+                    WorkoutTracking.shared.startObservingHeartRate(delegate: self)
                 }
                 self.started.toggle()
             }) {

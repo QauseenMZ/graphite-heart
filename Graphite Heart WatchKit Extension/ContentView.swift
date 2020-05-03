@@ -8,11 +8,17 @@
 
 import SwiftUI
 
+struct BlankView: View {
+    var body: some View {
+        Text("")
+    }
+}
+
 struct ContentView: View {
-    @State private var ipAddress = "192.168.211.228"
+    @State var ipAddress = ""
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("Minion IP:")
             TextField("Minion IP Address", text: $ipAddress)
             Spacer()
@@ -26,7 +32,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        BlankView()
     }
 }
 

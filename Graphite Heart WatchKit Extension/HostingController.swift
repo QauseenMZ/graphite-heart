@@ -13,12 +13,10 @@ import Foundation
 import SwiftUI
 
 class HostingController: WKHostingController<ContentView> {
-    override init() {
-        super.init();
-    }
+    let storage = Storage()
 
     override var body: ContentView {
-        return ContentView()
+        return ContentView(ipAddress: storage.ipAddress() ?? "192.168.211.228")
     }
 
 

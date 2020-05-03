@@ -12,22 +12,25 @@ import SwiftUI
 
 protocol WorkoutTrackingProtocol {
     func authorizeHealthKit()
-    func startObservingHeartRate(view: MainView)
+    func startObservingHeartRate(delegate: DataDelegate)
     func stopObservingHeartRate()
 }
 
-class WorkoutTracking {
-    static let shared = WorkoutTracking()
+class WorkoutTracking : NSObject, WorkoutTrackingProtocol, HKWorkoutSessionDelegate, HKLiveWorkoutBuilderDelegate {
+        static let shared = WorkoutTracking()
+
     let healthStore = HKHealthStore()
-    // var stepQuery: HKObserverQuery!
+    let workoutConfig = HKWorkoutConfiguration()
+
+    var workoutSession: HKWorkoutSession!
     var heartRateQuery: HKObserverQuery!
+    // var stepQuery: HKObserverQuery!
+
     var connection: NWConnection!
+    var connectionReady = false
 
-    init() {
-    }
-}
+    var dataDelegate: DataDelegate!
 
-extension WorkoutTracking: WorkoutTrackingProtocol {
     func authorizeHealthKit() {
         if HKHealthStore.isHealthDataAvailable() {
             let infoToRead = Set([
@@ -54,69 +57,109 @@ extension WorkoutTracking: WorkoutTrackingProtocol {
         }
     }
 
-    func startObservingHeartRate(view: MainView) {
-        print("starting observation of heart rate samples")
+    func workoutSession(_ workoutSession: HKWorkoutSession,
+    didChangeTo toState: HKWorkoutSessionState,
+      from fromState: HKWorkoutSessionState,
+      date: Date) {
 
-        guard let heartRateSampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else {
-            return
+      DispatchQueue.main.async {
+        // based on the change update the UI on the main thread
+        print("workout session changed state to \(toState)")
+      }
+    }
+
+    func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
+        for sampleType in collectedTypes {
+            if let quantityType = sampleType as? HKQuantityType {
+                guard let statistic = workoutBuilder.statistics(for: quantityType) else {
+                    continue
+                }
+                guard let quantity = statistic.mostRecentQuantity() else {
+                    continue
+                }
+                DispatchQueue.main.async {
+                    // update the UI based on the most recent quantitiy
+                    if (sampleType.identifier == HKQuantityTypeIdentifier.heartRate.rawValue) {
+                        let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
+                        let heartRate = quantity.doubleValue(for: heartRateUnit)
+                        let timestamp = Int(NSDate().timeIntervalSince1970)
+
+                        let text = "fitness.heartRate \(heartRate) \(timestamp)"
+
+                        if (self.connectionReady) {
+                            print("preparing to send: \(text)")
+                            self.connection.send(content: text.data(using: String.Encoding.utf8), completion: NWConnection.SendCompletion.contentProcessed(({ (NWError) in
+                                if NWError != nil {
+                                    print("Failed to send heart rate (\(heartRate)): \(NWError?.localizedDescription ?? "unknown error")")
+                                }
+                            })))
+                        } else {
+                            print("not ready to send: \(text)")
+                        }
+
+                        self.dataDelegate.heartRate = Float(heartRate)
+                        LocalNotificationHelper.fireHeartRate(heartRate)
+                    }
+                }
+            } else {
+                // handle other HKSampleType subclasses
+                print("unhandled sample type: \(sampleType)")
+            }
         }
+    }
+
+    func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
+        print("workout session error: \(error.localizedDescription)")
+        self.stopObservingHeartRate()
+    }
+
+    func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
+        print("workout builder collected: \(workoutBuilder)")
+    }
+
+    func startObservingHeartRate(delegate: DataDelegate) {
+        print("starting observation of heart rate samples")
+        self.dataDelegate = delegate
 
         if let existingQuery = heartRateQuery {
             healthStore.stop(existingQuery)
         }
-        
-        self.connection = NWConnection(host: NWEndpoint.Host(view.ipAddress), port: 2003, using: .udp)
-        var ready = false
+
+        self.connection = NWConnection(host: NWEndpoint.Host(dataDelegate.ipAddress), port: 2003, using: .udp)
         connection.stateUpdateHandler = { (newState) in
             switch(newState) {
             case .ready:
-                ready = true
+                self.connectionReady = true
             case .cancelled:
                 print("cancelled :(")
-                ready = false
+                self.connectionReady = false
             default: break
             }
         }
         connection.start(queue: .global())
 
-        heartRateQuery = HKObserverQuery(sampleType: heartRateSampleType, predicate: nil) { [unowned self] (_, _, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            
-            self.fetchLatestHeartRateSample { (sample) in
-                print("fetching latest heart rate sample")
+        self.workoutConfig.activityType = .other
+        self.workoutConfig.locationType = .unknown
 
-                guard let sample = sample else {
-                    return
+        do {
+            self.workoutSession = try HKWorkoutSession(healthStore: self.healthStore, configuration: self.workoutConfig)
+            self.workoutSession.delegate = self
+
+            let builder = self.workoutSession.associatedWorkoutBuilder()
+            builder.delegate = self
+            builder.dataSource = HKLiveWorkoutDataSource(healthStore: self.healthStore, workoutConfiguration: self.workoutConfig)
+
+            self.workoutSession.startActivity(with: Date())
+            builder.beginCollection(withStart: Date(), completion: { (success, error) in
+                if (success) {
+                    print("collection started")
+                } else {
+                    print("failed to begin collection: \(String(describing: error?.localizedDescription))")
                 }
-                
-                DispatchQueue.main.async {
-                    let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
-                    let heartRate = sample.quantity.doubleValue(for: heartRateUnit)
-                    let timestamp = Int(NSDate().timeIntervalSince1970)
-
-                    view.heartRate = Float(heartRate)
-
-                    if (ready) {
-                        let text = "fitness.heartRate \(heartRate) \(timestamp)"
-                        print("preparing to send: \(text)")
-                        self.connection.send(content: text.data(using: String.Encoding.utf8), completion: NWConnection.SendCompletion.contentProcessed(({ (NWError) in
-                            if NWError != nil {
-                                print("Failed to send heart rate (\(heartRate)): \(NWError?.localizedDescription ?? "unknown error")")
-                            }
-                        })))
-                    } else {
-                        print("not ready yet")
-                    }
-
-                    LocalNotificationHelper.fireHeartRate(heartRate)
-                }
-            }
+            })
+        } catch let error {
+            print("Error: \(error.localizedDescription)")
         }
-        
-        healthStore.execute(heartRateQuery)
     }
 
     func stopObservingHeartRate() {
@@ -124,9 +167,14 @@ extension WorkoutTracking: WorkoutTrackingProtocol {
             healthStore.stop(existingQuery)
             heartRateQuery = nil
         }
-        if let existingConnection = connection {
-            existingConnection.cancel()
-            connection = nil
+        self.connectionReady = false
+        if let connection = connection {
+            connection.cancel()
+            self.connection = nil
+        }
+        if let session = workoutSession {
+            session.end()
+            self.workoutSession = nil
         }
     }
 
