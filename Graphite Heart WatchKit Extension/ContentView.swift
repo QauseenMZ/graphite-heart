@@ -15,6 +15,7 @@ struct BlankView: View {
 }
 
 struct ContentView: View {
+    @State private var isActive: Bool = false
     @State var ipAddress = ""
 
     var body: some View {
@@ -22,9 +23,9 @@ struct ContentView: View {
             Text("Minion IP:")
             TextField("Minion IP Address", text: $ipAddress)
             Spacer()
-            NavigationLink(destination: MainView(ipAddress: ipAddress)) {
+            NavigationLink(destination: MainView(ipAddress: ipAddress), isActive: $isActive) {
                 Text("Connect")
-            }
+            }.navigationBarTitle(isActive ? "Change IP" : "")
         }
         // Text("Heart rate: \(currentHeartRate != nil ? String(describing: currentHeartRate) : "unknown")")
     }
