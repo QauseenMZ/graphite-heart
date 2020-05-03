@@ -10,6 +10,7 @@ import SwiftUI
 
 protocol DataDelegate {
     var ipAddress:String { get set }
+    var port:String { get set }
     var heartRate:Float? { get set }
 }
 
@@ -17,6 +18,7 @@ struct MainView: View, DataDelegate {
     let storage = Storage()
 
     @State var ipAddress:String = ""
+    @State var port:String = ""
     @State var heartRate:Float?
     @State var started = false
 
@@ -30,6 +32,7 @@ struct MainView: View, DataDelegate {
                     WorkoutTracking.shared.stopObservingHeartRate()
                 } else {
                     self.storage.ipAddress(newAddress: self.ipAddress)
+                    self.storage.port(newPort: self.port)
                     WorkoutTracking.shared.startObservingHeartRate(delegate: self)
                 }
                 self.started.toggle()

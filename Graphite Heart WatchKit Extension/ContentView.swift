@@ -17,15 +17,22 @@ struct BlankView: View {
 struct ContentView: View {
     @State private var isActive: Bool = false
     @State var ipAddress = ""
+    @State var port = "2003"
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Minion IP:")
-            TextField("Minion IP Address", text: $ipAddress)
+            HStack {
+                Text("IP:")
+                TextField("Graphite IP Address", text: $ipAddress)
+            }
+            HStack {
+                Text("Port:")
+                TextField("Graphite Port", text: $port)
+            }
             Spacer()
             NavigationLink(destination: MainView(ipAddress: ipAddress), isActive: $isActive) {
                 Text("Connect")
-            }.navigationBarTitle(isActive ? "Change IP" : "")
+            }.navigationBarTitle(isActive ? "Configure" : "")
         }
         // Text("Heart rate: \(currentHeartRate != nil ? String(describing: currentHeartRate) : "unknown")")
     }

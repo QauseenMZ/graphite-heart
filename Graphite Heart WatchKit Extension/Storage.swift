@@ -36,4 +36,20 @@ class Storage {
         }
         return nil
     }
+
+    func port(newPort: String? = nil) -> String? {
+        if (newPort != nil) {
+            do {
+                try diskStorage.set(newPort!, forKey: "port")
+            } catch let error {
+                print("Failed to save port \(String(describing: newPort)): \(error.localizedDescription)")
+            }
+        }
+        do {
+            return try diskStorage.retrieve(forKey: "port")
+        } catch let error {
+            print("Failed to retrieve IP address: \(error.localizedDescription)")
+        }
+        return nil
+    }
 }

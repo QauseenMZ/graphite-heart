@@ -125,7 +125,7 @@ class WorkoutTracking : NSObject, WorkoutTrackingProtocol, HKWorkoutSessionDeleg
             healthStore.stop(existingQuery)
         }
 
-        self.connection = NWConnection(host: NWEndpoint.Host(dataDelegate.ipAddress), port: 2003, using: .udp)
+        self.connection = NWConnection(host: NWEndpoint.Host(dataDelegate.ipAddress), port: NWEndpoint.Port(dataDelegate.port) ?? 2003, using: .udp)
         connection.stateUpdateHandler = { (newState) in
             switch(newState) {
             case .ready:
