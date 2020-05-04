@@ -25,7 +25,7 @@ struct MainView: View, DataDelegate {
     var body: some View {
         VStack {
             Spacer()
-            Text("♥️ \(heartRate == nil ? "n/a" : String(format: "%0.2f", heartRate!))").foregroundColor(Color.red).font(.title)
+            Text("♥️ \(heartRate == nil ? "n/a" : String(format: "%0.1f", heartRate!))").foregroundColor(Color.red).font(.title)
             Spacer()
             Button(action: {
                 if (self.started) {

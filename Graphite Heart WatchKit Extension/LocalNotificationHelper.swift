@@ -13,6 +13,7 @@ class LocalNotificationHelper {
     static func requestPermission() {
         let center = UNUserNotificationCenter.current()
         
+        /*
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 print("Granted")
@@ -20,6 +21,7 @@ class LocalNotificationHelper {
                 print("Not Granted")
             }
         }
+        */
     }
     
     static func fireSteps(_ steps: Int) {
@@ -38,7 +40,7 @@ class LocalNotificationHelper {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
+        // center.add(request)
     }
     
     static func fireHeartRate(_ heartRate: Double) {
@@ -57,6 +59,6 @@ class LocalNotificationHelper {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
+        // center.add(request)
     }
 }

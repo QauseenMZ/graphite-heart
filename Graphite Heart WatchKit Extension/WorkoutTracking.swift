@@ -98,7 +98,7 @@ class WorkoutTracking : NSObject, WorkoutTrackingProtocol, HKWorkoutSessionDeleg
                         }
 
                         self.dataDelegate.heartRate = Float(heartRate)
-                        LocalNotificationHelper.fireHeartRate(heartRate)
+                        // LocalNotificationHelper.fireHeartRate(heartRate)
                     }
                 }
             } else {
