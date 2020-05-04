@@ -29,13 +29,14 @@ struct MainView: View, DataDelegate {
             Spacer()
             Button(action: {
                 if (self.started) {
+                    self.started.toggle()
                     WorkoutTracking.shared.stopObservingHeartRate()
                 } else {
+                    self.started.toggle()
                     self.storage.ipAddress(newAddress: self.ipAddress)
                     self.storage.port(newPort: self.port)
                     WorkoutTracking.shared.startObservingHeartRate(delegate: self)
                 }
-                self.started.toggle()
             }) {
                 if (self.started) {
                     Text("Stop")
